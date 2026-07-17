@@ -1,18 +1,25 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,100:2C5364&height=200&section=header&text=Patches&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=A%20Rectangle-Partition%20Logic%20Puzzle&descAlignY=58&descSize=18&fontList=Inter"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=220&section=header&text=Nexus-Synergy&fontSize=68&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=A%20Rectangle-Partition%20Logic%20Puzzle&descAlignY=58&descSize=18&fontList=Inter"/>
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com/?font=Inter&weight=400&size=16&duration=4000&pause=1500&color=6B7280&center=true&vCenter=true&width=780&lines=Fill+the+grid.+Cover+every+clue.+Solve+the+patch.;32+hand-planned%2C+solver-verified+levels.;Shipped+as+a+web+app+and+a+native+Java+desktop+app." alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com/?font=Inter&weight=400&size=16&duration=4000&pause=1500&color=00D9FF&center=true&vCenter=true&width=820&lines=Fill+the+grid.+Cover+every+clue.+Solve+the+synergy.;32+hand-planned%2C+solver-verified+levels.;Shipped+as+a+web+app+and+a+native+Java+desktop+app.;Zero+dependencies.+Zero+build+step.+100%25+offline." alt="Typing SVG"/>
 
 <br/><br/>
 
-<img src="https://img.shields.io/badge/levels-32-1a1a2e?style=flat-square&labelColor=0f0f1a" />
-<img src="https://img.shields.io/badge/platforms-web%20%7C%20java-1a1a2e?style=flat-square&labelColor=0f0f1a" />
-<img src="https://img.shields.io/badge/dependencies-zero-1a1a2e?style=flat-square&labelColor=0f0f1a" />
-<img src="https://img.shields.io/badge/build%20step-none-1a1a2e?style=flat-square&labelColor=0f0f1a" />
-<img src="https://img.shields.io/badge/license-MIT-1a1a2e?style=flat-square&labelColor=0f0f1a" />
+<img src="https://img.shields.io/badge/levels-32-0f0c29?style=for-the-badge&labelColor=000000" />
+<img src="https://img.shields.io/badge/platforms-web%20%7C%20java-0f0c29?style=for-the-badge&labelColor=000000" />
+<img src="https://img.shields.io/badge/dependencies-zero-0f0c29?style=for-the-badge&labelColor=000000" />
+<img src="https://img.shields.io/badge/build%20step-none-0f0c29?style=for-the-badge&labelColor=000000" />
+<img src="https://img.shields.io/badge/license-MIT-0f0c29?style=for-the-badge&labelColor=000000" />
+
+<br/>
+
+<img src="https://img.shields.io/github/stars/yourusername/nexus-synergy?style=social" />
+<img src="https://img.shields.io/github/forks/yourusername/nexus-synergy?style=social" />
+<img src="https://img.shields.io/github/last-commit/yourusername/nexus-synergy?color=302b63&labelColor=000000&style=flat-square" />
+<img src="https://img.shields.io/github/repo-size/yourusername/nexus-synergy?color=302b63&labelColor=000000&style=flat-square" />
 
 </div>
 
@@ -24,13 +31,15 @@
 
 <br/>
 
+> **Note on the badges above:** the star/fork/commit/size badges pull live data from GitHub and only render correctly once you swap `yourusername/nexus-synergy` for your actual GitHub username and repository name.
+
 ---
 
 <div align="center">
 
 ### Table of Contents
 
-**[About](#about)** · **[Preview](#preview)** · **[Features](#features)** · **[How to Play](#how-to-play)** · **[Architecture](#architecture)** · **[Project Structure](#project-structure)** · **[File Reference](#file-reference)** · **[Level Generator](#level-generator)** · **[Getting Started](#getting-started)** · **[Validation](#validation--testing)** · **[Roadmap](#roadmap)**
+**[About](#about)** · **[Why "Nexus-Synergy"?](#why-nexus-synergy)** · **[Preview](#preview)** · **[Features](#features)** · **[How to Play](#how-to-play)** · **[Architecture](#architecture)** · **[Project Structure](#project-structure)** · **[File Reference](#file-reference)** · **[Level Generator](#level-generator)** · **[Getting Started](#getting-started)** · **[Validation](#validation--testing)** · **[Roadmap](#roadmap)** · **[Contributing](#contributing)**
 
 </div>
 
@@ -40,7 +49,9 @@
 
 ## About
 
-**Patches** is an original, independently built puzzle inspired by the mechanics of a well-known daily rectangle-partition game. The underlying logic draws from the classic **Shikaku** family of puzzles: every numbered cell is a clue, and the goal is to draw a rectangle around it whose area matches the number — until the entire grid is tiled edge-to-edge with no gaps and no overlaps.
+**Nexus-Synergy** is an original, independently built puzzle inspired by the mechanics of a well-known daily rectangle-partition game. The underlying logic draws from the classic **Shikaku** family of puzzles — a genre with roots in Japanese pencil-and-paper logic puzzles, where the challenge is purely combinatorial: no words, no luck, just geometry and deduction.
+
+The rule set is simple to state and satisfyingly hard to master: every numbered cell on the board is a **clue**. Your job is to draw a rectangle around that clue whose total cell count matches the number exactly — and to keep doing this, clue by clue, until every single cell on the board belongs to exactly one rectangle. No gaps. No overlaps. No cell left unclaimed. The moment the last rectangle locks into place, the board is solved.
 
 This repository ships **two complete, independent implementations of the same 32 puzzles**:
 
@@ -62,9 +73,21 @@ This repository ships **two complete, independent implementations of the same 32
 </tr>
 </table>
 
-Both versions consume **identical puzzle data**, generated once by a single Python script (`generate_levels.py`) and exported into two formats — a JavaScript array for the web build, and a compact text encoding for the Java build. A fix or a new level batch only ever needs to be generated once.
+Both versions consume **identical puzzle data**, generated once by a single Python script (`generate_levels.py`) and exported into two formats — a JavaScript array for the web build, and a compact text encoding for the Java build. A fix or a new level batch only ever needs to be generated once, and both apps stay perfectly in sync automatically — there's no risk of the web version and the desktop version silently drifting apart over time.
 
 > **Disclaimer** — This is a fan-made, independently engineered project built for educational and portfolio purposes. It is not affiliated with, endorsed by, or connected to any commercial product. No proprietary code, assets, or puzzle data were used; only the publicly observable rules of the genre were reimplemented from scratch.
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
+
+<br/>
+
+---
+
+## Why "Nexus-Synergy"?
+
+The name is a deliberate nod to what's actually happening on the board. Every clue cell is a **nexus** — a fixed point the whole puzzle radiates outward from — and the puzzle is only solved once every one of those individual rectangles works together, edge to edge, in perfect **synergy**, to cover the entire grid with no seams left showing. The name describes the win condition, not just the theme.
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
 
 <br/>
 
@@ -76,23 +99,32 @@ Both versions consume **identical puzzle data**, generated once by a single Pyth
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="assets/screenshots/level-select.png" width="100%"/>
+<img src="https://placehold.co/500x360/0f0c29/00d9ff?text=Level+Select&font=raleway" width="100%"/>
 <br/><sub><strong>Level Select</strong> — 32 levels grouped by grid-size tier</sub>
 </td>
 <td align="center" width="33%">
-<img src="assets/screenshots/board-empty.png" width="100%"/>
+<img src="https://placehold.co/500x360/302b63/00d9ff?text=Fresh+Puzzle&font=raleway" width="100%"/>
 <br/><sub><strong>Fresh Puzzle</strong> — clues showing target area and shape</sub>
 </td>
 <td align="center" width="33%">
-<img src="assets/screenshots/board-solved.png" width="100%"/>
+<img src="https://placehold.co/500x360/24243e/00d9ff?text=Solved+Board&font=raleway" width="100%"/>
 <br/><sub><strong>Solved Board</strong> — every cell claimed by exactly one patch</sub>
 </td>
 </tr>
 </table>
 
-<sub>Screenshots shown are from the Java desktop build — the web build shares an identical visual theme.</sub>
+<sub>Screenshots shown are placeholders — see the note below.</sub>
 
 </div>
+
+> ⚠️ **About the images not rendering:** the three images above are temporary placeholders generated on the fly by `placehold.co` — they'll always load, since they don't depend on anything in your repo. Your **real** screenshots weren't showing up because GitHub can only render an image tag if the file actually exists at that exact path *inside the repository itself*. The most common reasons that fails:
+> 1. The PNG files were never actually added and committed to `assets/screenshots/` — referencing a path in the README doesn't create the file.
+> 2. A filename case mismatch (`Level-Select.png` vs `level-select.png`) — GitHub's servers are case-sensitive even if your local OS isn't.
+> 3. The images were added on a different branch than the one GitHub is rendering the README from.
+>
+> **To fix it:** drop your real `.png` files into `assets/screenshots/`, `git add` + commit + push them, then swap the three `placehold.co` URLs above back to the original relative paths, e.g. `assets/screenshots/board-solved.png`.
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
 
 <br/>
 
@@ -109,11 +141,13 @@ Both versions consume **identical puzzle data**, generated once by a single Pyth
 - 6 difficulty tiers, 5×5 through 10×10 expert
 - Guillotine-cut generator with corner-anchored clues
 - Full tiling guaranteed — no gaps, no overlaps, ever
+- Identical validation logic shared byte-for-byte in intent across both builds
 
 **Visual Design**
 - Custom "quilted-canvas" theme with stitched borders and a fabric-swatch palette
 - Fredoka + Inter typography bundled in both builds
 - Smooth drag-preview feedback — green for valid, red for invalid
+- Consistent color language between the web CSS variables and the Java `Theme` class
 
 </td>
 <td width="50%" valign="top">
@@ -129,10 +163,21 @@ Both versions consume **identical puzzle data**, generated once by a single Pyth
 - Web: open `index.html` — done
 - Desktop: double-click one `.jar` — done
 - No installers, no accounts, no telemetry
+- Fully offline after the initial download — nothing ever phones home
 
 </td>
 </tr>
 </table>
+
+<br/>
+
+### A closer look at what makes it tick
+
+- **Deterministic daily puzzle** — the "puzzle of the day" isn't random each time you open the app; it's derived from the calendar date, so everyone playing on the same day gets the same board, and refreshing the page won't let you reroll it.
+- **Hint, not a solver** — the Hint button reveals exactly one still-unsolved patch at a time, pulled from the generator's own reference solution. It nudges you forward without ever solving the whole board for you.
+- **Local, private progress** — solved levels, streaks, and best times are stored entirely on your own machine (`localStorage` on web, a properties file on desktop). Nothing is ever uploaded anywhere.
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
 
 <br/>
 
@@ -179,6 +224,12 @@ flowchart TD
 
 <br/>
 
+**Worked example** — say a clue reads `6` with a "wide" icon underneath. That single number is doing two jobs at once: it tells you the rectangle must cover exactly 6 cells, *and* it tells you the rectangle must be wider than it is tall (so a 1×6, 2×3, or 3×2-oriented-wide shape, never a 6×1). You'd drag from that clue cell out to a corner that produces a 2-row-by-3-column block. If the drag produces the right area but the wrong proportions — say a 1×6 strip when a 2×3 block was needed — the game rejects it, because shape is checked independently from area, not inferred from it.
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
+
+<br/>
+
 ---
 
 ## Architecture
@@ -204,12 +255,18 @@ flowchart LR
         ENGINE --> SWING[Swing components<br/>custom-painted UI]
     end
 
-    style Shared fill:#1a1a2e,stroke:#4a4a6a,color:#eaeaea
+    style Shared fill:#0f0c29,stroke:#4a4a6a,color:#eaeaea
     style Web fill:#16213e,stroke:#3a5a78,color:#eaeaea
     style Desktop fill:#162e1e,stroke:#4c7a4c,color:#eaeaea
 ```
 
 `game.js` and `BoardPanel.java` implement an **identical validation ruleset** — shape check → area check → overlap check → single-clue check — line-for-line equivalent logic in two languages, so any puzzle solvable in one build is guaranteed solvable in the other.
+
+### Why a shared data pipeline instead of two separate generators?
+
+Maintaining puzzle logic in two languages is the single easiest way for a project like this to quietly rot: a fix applied to the JavaScript validator that never makes it into the Java validator means the two builds can silently disagree about whether a given placement is legal. Generating the levels **once**, in one place, and exporting to two formats sidesteps that entire class of bug — there is only ever one source of truth for what a "valid" puzzle looks like, even though there are two separate rendering engines consuming it.
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
 
 <br/>
 
@@ -218,7 +275,7 @@ flowchart LR
 ## Project Structure
 
 ```
-patches-game/
+nexus-synergy/
 │
 ├── index.html                    Web app entry point — screens and modals
 ├── style.css                     Full visual theme (quilted-canvas design)
@@ -232,11 +289,11 @@ patches-game/
 │
 └── java-desktop-version/
     │
-    ├── patches-game.jar           Double-click to run — everything bundled inside
+    ├── nexus-synergy.jar          Double-click to run — everything bundled inside
     ├── README-JAVA.md             Java-specific setup and rebuild instructions
     ├── MANIFEST.MF                Jar manifest — declares the Main-Class
     │
-    ├── src/patches/                All Java source (14 files, see reference below)
+    ├── src/nexussynergy/           All Java source (14 files, see reference below)
     │
     ├── resources/
     │   ├── levels.dat               32 generated puzzles (Java format)
@@ -245,13 +302,17 @@ patches-game/
     └── licenses/                  OFL license text for the bundled fonts
 ```
 
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
+
 <br/>
 
 ---
 
 ## File Reference
 
-### Web version
+<details open>
+<summary><strong>Web version</strong></summary>
+<br/>
 
 <table>
 <tr><th align="left" width="22%">File</th><th align="left">Role</th></tr>
@@ -269,7 +330,7 @@ patches-game/
 </tr>
 <tr>
 <td><code>levels.js</code></td>
-<td>Auto-generated data file — a single <code>PATCHES_LEVELS</code> array of 32 level objects (rows, columns, and each clue's position, value, shape, and solution). Never hand-edited; regenerate it via the Python script instead.</td>
+<td>Auto-generated data file — a single <code>NEXUS_SYNERGY_LEVELS</code> array of 32 level objects (rows, columns, and each clue's position, value, shape, and solution). Never hand-edited; regenerate it via the Python script instead.</td>
 </tr>
 <tr>
 <td><code>generate_levels.py</code></td>
@@ -277,12 +338,16 @@ patches-game/
 </tr>
 </table>
 
-### Java desktop version — `src/patches/`
+</details>
+
+<details>
+<summary><strong>Java desktop version — <code>src/nexussynergy/</code></strong></summary>
+<br/>
 
 <table>
 <tr><th align="left" width="22%">File</th><th align="left">Role</th></tr>
 <tr>
-<td><code>PatchesApp.java</code></td>
+<td><code>NexusSynergyApp.java</code></td>
 <td><strong>Main entry point.</strong> Builds the <code>JFrame</code>, header, footer, and the <code>CardLayout</code> that swaps between the level-select and game screens. Owns the <code>Progress</code> instance and wires every screen's callbacks together.</td>
 </tr>
 <tr>
@@ -331,7 +396,7 @@ patches-game/
 </tr>
 <tr>
 <td><code>Progress.java</code></td>
-<td>Reads and writes <code>~/.patches-game/progress.properties</code> — solved levels, best times per level, and the daily play streak.</td>
+<td>Reads and writes <code>~/.nexus-synergy/progress.properties</code> — solved levels, best times per level, and the daily play streak.</td>
 </tr>
 <tr>
 <td><code>Theme.java</code></td>
@@ -339,17 +404,21 @@ patches-game/
 </tr>
 </table>
 
-### Java desktop version — supporting files
+</details>
+
+<details>
+<summary><strong>Java desktop version — supporting files</strong></summary>
+<br/>
 
 <table>
 <tr><th align="left" width="22%">File</th><th align="left">Role</th></tr>
 <tr>
-<td><code>patches-game.jar</code></td>
+<td><code>nexus-synergy.jar</code></td>
 <td>The final, runnable artifact. Contains all compiled classes, <code>levels.dat</code>, and both font files — fully self-sufficient.</td>
 </tr>
 <tr>
 <td><code>MANIFEST.MF</code></td>
-<td>One line — <code>Main-Class: patches.PatchesApp</code> — tells the JVM what to launch when the jar is run directly.</td>
+<td>One line — <code>Main-Class: nexussynergy.NexusSynergyApp</code> — tells the JVM what to launch when the jar is run directly.</td>
 </tr>
 <tr>
 <td><code>resources/levels.dat</code></td>
@@ -368,6 +437,10 @@ patches-game/
 <td>A focused setup and rebuild guide for just the Java build.</td>
 </tr>
 </table>
+
+</details>
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
 
 <br/>
 
@@ -389,7 +462,7 @@ flowchart TD
     G -- Fails --> B
     G -- Passes --> H[Export to<br/>levels.js + levels.dat]
 
-    style A fill:#1a1a2e,stroke:#4a4a6a,color:#eaeaea
+    style A fill:#0f0c29,stroke:#4a4a6a,color:#eaeaea
     style H fill:#162e1e,stroke:#4c7a4c,color:#eaeaea
 ```
 
@@ -410,6 +483,12 @@ flowchart TD
 
 Clues are corner-anchored — never placed mid-rectangle — specifically so a corner-to-corner mouse drag can always reconstruct the intended shape, matching the real feel of drag-based rectangle puzzles.
 
+### Why "guillotine-cut" instead of random rectangle placement?
+
+A naive approach — scattering rectangles randomly and hoping they tile — almost never produces a valid full tiling, because leftover irregular gaps are nearly guaranteed. A **guillotine cut** sidesteps that entirely: at every step, the generator takes one whole rectangle and slices it, edge to edge, into two smaller rectangles — either a single vertical or a single horizontal cut all the way across. Because every cut divides an already-perfect rectangle into two smaller perfect rectangles, the property "the pieces perfectly tile the original grid" is mathematically guaranteed at every step, not something that needs to be checked and retried afterward. The verification pass in step G is a final safety net, not the primary correctness mechanism.
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
+
 <br/>
 
 ---
@@ -420,7 +499,7 @@ Clues are corner-anchored — never placed mid-rectangle — specifically so a c
 
 ```bash
 # Just open it — no install, no server needed
-cd patches-game
+cd nexus-synergy
 open index.html        # macOS
 xdg-open index.html    # Linux
 start index.html       # Windows
@@ -438,31 +517,33 @@ python3 -m http.server 8000
 Requires a Java 17+ runtime (`java -version` to check; install via `sudo apt install default-jre` or [adoptium.net](https://adoptium.net) if missing).
 
 ```bash
-cd patches-game/java-desktop-version
-java -jar patches-game.jar
+cd nexus-synergy/java-desktop-version
+java -jar nexus-synergy.jar
 ```
 
-Or double-click `patches-game.jar` if your OS associates `.jar` files with Java.
+Or double-click `nexus-synergy.jar` if your OS associates `.jar` files with Java.
 
 ### Rebuilding the Java app from source
 
 ```bash
-cd patches-game/java-desktop-version
+cd nexus-synergy/java-desktop-version
 mkdir -p out
-javac -encoding UTF-8 -d out src/patches/*.java
+javac -encoding UTF-8 -d out src/nexussynergy/*.java
 cp -r resources/fonts out/fonts
 cp resources/levels.dat out/levels.dat
-jar cfm patches-game.jar MANIFEST.MF -C out .
+jar cfm nexus-synergy.jar MANIFEST.MF -C out .
 ```
 
 ### Regenerating levels
 
 ```bash
-cd patches-game
+cd nexus-synergy
 python3 generate_levels.py
 ```
 
 Edit `level_plan()` inside the script to change grid sizes, level count, or difficulty per tier. This overwrites `levels.js`, which can then be re-encoded into `levels.dat` for the Java build.
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
 
 <br/>
 
@@ -489,6 +570,8 @@ Every level shipped in this repo passed through three independent verification p
 </table>
 
 The Java build was additionally verified by driving the real UI: a `Robot`-based test harness performed genuine mouse press/drag/release sequences through every clue of a live, rendered window and confirmed the board reached a fully-solved state — exercising the actual production code path, not a shortcut.
+
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
 
 <br/>
 
@@ -525,21 +608,33 @@ The Java build was additionally verified by driving the real UI: a `Robot`-based
 </tr>
 </table>
 
+<div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
+
 <br/>
 
 ---
 
-<div align="center">
-
-### Contributing
+## Contributing
 
 Found a bug? Open an issue. Have an idea for a level pack? Open a pull request.
 
+<div align="center">
+
+<img src="https://img.shields.io/badge/contributions-welcome-0f0c29?style=for-the-badge&labelColor=000000" />
+<img src="https://img.shields.io/badge/issues-open-0f0c29?style=for-the-badge&labelColor=000000" />
+<img src="https://img.shields.io/badge/PRs-accepted-0f0c29?style=for-the-badge&labelColor=000000" />
+
+<br/><br/>
+
+<img src="https://contrib.rocks/image?repo=yourusername/nexus-synergy" />
+
+<br/><br/>
+
+<sub>Star history — updates automatically once this repo has real traffic:</sub>
+
 <br/>
 
-<img src="https://img.shields.io/badge/contributions-welcome-1a1a2e?style=flat-square&labelColor=0f0f1a" />
-<img src="https://img.shields.io/badge/issues-open-1a1a2e?style=flat-square&labelColor=0f0f1a" />
-<img src="https://img.shields.io/badge/PRs-accepted-1a1a2e?style=flat-square&labelColor=0f0f1a" />
+<img src="https://api.star-history.com/svg?repos=yourusername/nexus-synergy&type=Date" width="500"/>
 
 <br/><br/>
 
@@ -547,4 +642,4 @@ Found a bug? Open an issue. Have an idea for a level pack? Open a pull request.
 
 </div>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,100:2C5364&height=120&section=footer"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=120&section=footer"/>
