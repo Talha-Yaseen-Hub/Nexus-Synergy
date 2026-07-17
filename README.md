@@ -326,7 +326,7 @@ nexus-synergy/
     │   ├── levels.dat               32 generated puzzles (Java format)
     │   └── fonts/                   Bundled Fredoka + Inter TTFs
     │
-    └── licenses/                  OFL license text for the bundled fonts
+    └── licenses/                  MIT LICENSE
 ```
 
 <div align="right"><a href="#nexus-synergy">↑ back to top</a></div>
