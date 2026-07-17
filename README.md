@@ -14,13 +14,6 @@
 <img src="https://img.shields.io/badge/build%20step-none-0f0c29?style=for-the-badge&labelColor=000000" />
 <img src="https://img.shields.io/badge/license-MIT-0f0c29?style=for-the-badge&labelColor=000000" />
 
-<br/>
-
-<img src="https://img.shields.io/github/stars/yourusername/nexus-synergy?style=social" />
-<img src="https://img.shields.io/github/forks/yourusername/nexus-synergy?style=social" />
-<img src="https://img.shields.io/github/last-commit/yourusername/nexus-synergy?color=302b63&labelColor=000000&style=flat-square" />
-<img src="https://img.shields.io/github/repo-size/yourusername/nexus-synergy?color=302b63&labelColor=000000&style=flat-square" />
-
 </div>
 
 <br/>
@@ -31,15 +24,49 @@
 
 <br/>
 
-> **Note on the badges above:** the star/fork/commit/size badges pull live data from GitHub and only render correctly once you swap `yourusername/nexus-synergy` for your actual GitHub username and repository name.
-
 ---
 
 <div align="center">
 
-### Table of Contents
+## 📋 Table of Contents
 
-**[About](#about)** · **[Why "Nexus-Synergy"?](#why-nexus-synergy)** · **[Preview](#preview)** · **[Features](#features)** · **[How to Play](#how-to-play)** · **[Architecture](#architecture)** · **[Project Structure](#project-structure)** · **[File Reference](#file-reference)** · **[Level Generator](#level-generator)** · **[Getting Started](#getting-started)** · **[Validation](#validation--testing)** · **[Roadmap](#roadmap)** · **[Contributing](#contributing)**
+<table>
+<tr>
+<td valign="top" width="25%">
+
+**📖 Overview**
+- [About](#about)
+- [Why "Nexus-Synergy"?](#why-nexus-synergy)
+- [Preview](#preview)
+
+</td>
+<td valign="top" width="25%">
+
+**🎮 Playing**
+- [Features](#features)
+- [How to Play](#how-to-play)
+
+</td>
+<td valign="top" width="25%">
+
+**🏗️ Under the Hood**
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [File Reference](#file-reference)
+- [Level Generator](#level-generator)
+
+</td>
+<td valign="top" width="25%">
+
+**🚀 Get Involved**
+- [Getting Started](#getting-started)
+- [Validation & Testing](#validation--testing)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+
+</td>
+</tr>
+</table>
 
 </div>
 
@@ -616,27 +643,55 @@ The Java build was additionally verified by driving the real UI: a `Robot`-based
 
 ## Contributing
 
-Found a bug? Open an issue. Have an idea for a level pack? Open a pull request.
-
 <div align="center">
 
 <img src="https://img.shields.io/badge/contributions-welcome-0f0c29?style=for-the-badge&labelColor=000000" />
 <img src="https://img.shields.io/badge/issues-open-0f0c29?style=for-the-badge&labelColor=000000" />
 <img src="https://img.shields.io/badge/PRs-accepted-0f0c29?style=for-the-badge&labelColor=000000" />
 
-<br/><br/>
-
-<img src="https://contrib.rocks/image?repo=yourusername/nexus-synergy" />
-
-<br/><br/>
-
-<sub>Star history — updates automatically once this repo has real traffic:</sub>
+</div>
 
 <br/>
 
-<img src="https://api.star-history.com/svg?repos=yourusername/nexus-synergy&type=Date" width="500"/>
+This project stays fun to work on because it stays small and readable — no framework churn, no build pipeline to fight with. Contributions that keep it that way are especially welcome.
 
-<br/><br/>
+### Ways to help
+
+<table>
+<tr><th align="left" width="22%">Type</th><th align="left">What that looks like</th></tr>
+<tr>
+<td>🐛 <strong>Bug report</strong></td>
+<td>Open an issue with the level number, what you expected, and what actually happened. A screenshot or screen recording of the bad placement/validation helps a lot.</td>
+</tr>
+<tr>
+<td>🧩 <strong>New level pack</strong></td>
+<td>Tweak <code>level_plan()</code> in <code>generate_levels.py</code> for a new grid size or difficulty curve, regenerate, and confirm the three validation passes (see <a href="#validation--testing">Validation &amp; Testing</a>) still hold before opening a PR.</td>
+</tr>
+<tr>
+<td>✨ <strong>Feature</strong></td>
+<td>Check the <a href="#roadmap">Roadmap</a> first — if it's already listed, comment on or open an issue to say you're picking it up, so effort doesn't get duplicated.</td>
+</tr>
+<tr>
+<td>🎨 <strong>Design/UX polish</strong></td>
+<td>Keep new work inside the existing "quilted-canvas" palette (CSS variables in <code>style.css</code>, mirrored in <code>Theme.java</code>) so the two builds don't visually drift apart.</td>
+</tr>
+<tr>
+<td>📝 <strong>Docs</strong></td>
+<td>Typos, unclear setup steps, or missing explanations in this README are fair game for a quick PR.</td>
+</tr>
+</table>
+
+### Submitting a pull request
+
+1. **Fork** the repo and create a branch off `main` named for what it does (`fix/hint-button-timing`, `feat/level-editor`, etc.)
+2. **Keep the two builds in sync** — if your change touches puzzle logic, generator output, or validation rules, mirror it in both `game.js` and `BoardPanel.java` rather than only one.
+3. **Regenerate, don't hand-edit** `levels.js` / `levels.dat` — always go through `generate_levels.py` so both files stay derived from the same source of truth.
+4. **Test locally** — for web changes, just reload `index.html`; for Java changes, rebuild the jar using the steps in [Getting Started](#getting-started) and play through at least one level per difficulty tier.
+5. **Open the PR** with a short description of the *what* and *why*, and mention which build(s) you tested.
+
+<div align="center">
+
+<br/>
 
 <sub>Built with care, verified with code, and inspired by a genuinely fun little puzzle format.</sub>
 
