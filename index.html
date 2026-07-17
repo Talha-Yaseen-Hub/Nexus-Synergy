@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Patches — the rectangle puzzle</title>
+<meta name="description" content="An unofficial, offline-playable clone of LinkedIn's Patches puzzle. Fill the grid with numbered rectangle patches across 32 handcrafted levels." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">Patches</span>
+      <span class="brand-tag">a rectangle puzzle</span>
+    </div>
+    <div class="streak" title="Consecutive days played">
+      🧵 <strong id="streakCount">0</strong> day streak
+    </div>
+  </header>
+
+  <!-- ===================== LEVEL SELECT ===================== -->
+  <section id="screen-select" class="screen active">
+    <p class="select-intro">
+      Fill every cell with a numbered rectangle patch. Each clue tells you how many
+      cells its patch must cover and whether it's square, tall, or wide.
+      Pick any of the 32 levels below, or jump into today's featured puzzle.
+    </p>
+    <div class="toolbar-left" style="margin-bottom: 18px;">
+      <button class="btn btn-primary" id="btnPlayDaily">★ Play today's puzzle</button>
+      <button class="btn" id="btnHowTo">How to play</button>
+    </div>
+    <div class="level-grid" id="levelGrid"></div>
+  </section>
+
+  <!-- ===================== GAME SCREEN ===================== -->
+  <section id="screen-game" class="screen">
+    <div class="game-toolbar">
+      <div class="toolbar-left">
+        <button class="btn" id="btnBack">← Levels</button>
+        <span class="level-badge" id="levelBadge">Level 1</span>
+      </div>
+      <div class="toolbar-right">
+        <span class="timer" id="timer">00:00</span>
+        <button class="btn" id="btnHint"><span class="btn-icon">💡</span>Hint</button>
+        <button class="btn" id="btnUndo"><span class="btn-icon">↺</span>Undo</button>
+        <button class="btn" id="btnReset"><span class="btn-icon">⟲</span>Reset</button>
+      </div>
+    </div>
+    <p class="level-meta" id="levelMeta"></p>
+
+    <div class="board-wrap">
+      <div class="board" id="board"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    Patches is an original, independently-built puzzle inspired by LinkedIn's
+    daily rectangle game. Not affiliated with or endorsed by LinkedIn.<br />
+    Progress and best times are saved locally in your browser.
+  </footer>
+</div>
+
+<!-- ===================== WIN MODAL ===================== -->
+<div class="win-overlay" id="winOverlay">
+  <div class="win-card">
+    <div class="win-stitches">✂︎┈┈┈┈┈┈┈┈┈┈</div>
+    <h2>Patch complete!</h2>
+    <p id="winStats">Solved in 00:00</p>
+    <div class="win-actions">
+      <button class="btn btn-primary" id="btnNextLevel">Next level →</button>
+      <button class="btn" id="btnBackToLevels">All levels</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HOW TO PLAY MODAL ===================== -->
+<div class="modal-overlay" id="howToOverlay">
+  <div class="modal-card">
+    <h2>How to play Patches</h2>
+    <ul>
+      <li>Every numbered cell is a <strong>clue</strong>. The number is the exact
+        cell count its rectangle must cover.</li>
+      <li>The small icon under the number shows the required shape: a
+        square, a tall rectangle, or a wide rectangle.</li>
+      <li>Click a clue and drag to the opposite corner of the rectangle you
+        want to place, then release.</li>
+      <li>Every rectangle must contain exactly one clue, and rectangles can
+        never overlap.</li>
+      <li>You win once every cell on the board belongs to a patch, with no
+        gaps left uncovered.</li>
+      <li>Click any placed patch to remove it. Use <strong>Undo</strong> to
+        step back, <strong>Reset</strong> to clear the board, or
+        <strong>Hint</strong> if you're stuck.</li>
+    </ul>
+    <div class="legend">
+      <div class="legend-item"><span class="shape-icon square" style="border-color:#2f4b63;"></span> Square</div>
+      <div class="legend-item"><span class="shape-icon tall" style="border-color:#2f4b63;"></span> Tall</div>
+      <div class="legend-item"><span class="shape-icon wide" style="border-color:#2f4b63;"></span> Wide</div>
+    </div>
+    <button class="btn btn-primary" id="btnCloseHowTo">Got it</button>
+  </div>
+</div>
+
+<script src="levels.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
